@@ -26,7 +26,8 @@ def ver_tabela():
 
     ver_db = cursor.fetchall()
 
-    print(ver_db)
+    for pessoa in ver_db:
+        print(pessoa)
 
 print("digite 1 para ver o banco de dados ")
 print("digite 2 para inserir dados no banco de dados ")
