@@ -1,4 +1,4 @@
-''
+'''
 Author: www.github.com/JuanBindez
 Description: Connection Sqlite3
 Python Version: 3.10
