@@ -1,10 +1,9 @@
-'''
+''
 Author: www.github.com/JuanBindez
 Description: Connection Sqlite3
 Python Version: 3.10
 year: 2022
 Local: Brazil
-OS: Linux
 '''
 
 
@@ -20,7 +19,7 @@ try:
 
 
     def criar_banco():
-        cursor.execute("CREATE TABLE IF NOT EXISTS cadastro (nome text, idade integer, email text)")
+        cursor.execute("CREATE TABLE IF NOT EXISTS cadastro(id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, idade INTEGER, email TEXT)")
 
     criar_banco()
 
@@ -30,7 +29,7 @@ try:
         idade = str(input("idade>"))
         email = input("email>")
 
-        cursor.execute("INSERT INTO cadastro VALUES('"+nome+"',"+idade+",'"+email+"')")
+        cursor.execute("INSERT INTO cadastro VALUES(NULL,'"+nome+"',"+idade+",'"+email+"')")
 
         banco_db.commit()#este comando salva os dados no banco de dados
         os.system("clear")
@@ -44,7 +43,7 @@ try:
         ver_db = cursor.fetchall()
         os.system("clear")
         linha()
-        print("  nome  idade     email")
+        print(" id  nome  idade        email")
 
         for pessoa in ver_db:
             print(pessoa)
@@ -52,13 +51,19 @@ try:
         linha()
         menu()
 
+    def deleta_id(i):
+            query = "DELETE FROM cadastro WHERE id=?"
+            cursor.execute(query, i)
+            banco_db.commit()
+
 
     def menu():
         print(
             '''
                                 SQLITE 3 COM PYTHON
                             [1] para ver o banco de dados
-                            [2] para inserir dados no banco de dados 
+                            [2] para inserir dados no banco
+                            [3] para deletar id no banco
             '''
         )
         
@@ -71,6 +76,10 @@ try:
 
             case 2:
                 pedir_dados()
+
+            case 3:
+                delid = str(input('digite o id a ser deletado'))
+                deleta_id(delid)
 
             case _:
                 print("digite apenas 1 ou 2")
