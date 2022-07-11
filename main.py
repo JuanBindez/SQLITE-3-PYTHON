@@ -61,10 +61,8 @@ def menu():
                         [2] para inserir dados no banco de dados 
         '''
     )
-
     
     escolha = int(input(">"))
-
 
     match escolha:
 
@@ -76,6 +74,7 @@ def menu():
 
         case _:
             print("digite apenas 1 ou 2")
+            
 
 os.system("clear")
 menu()
