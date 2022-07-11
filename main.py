@@ -70,4 +70,3 @@ def menu():
 
 os.system("clear")
 menu()
-Footer
