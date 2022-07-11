@@ -82,7 +82,7 @@ try:
                 deleta_id(delid)
 
             case _:
-                print("digite apenas 1 ou 2")
+                print("digite apenas os números listados")
                 
 
     os.system("clear")
