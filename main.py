@@ -44,8 +44,16 @@ def ver_banco():
 
 
 def menu():
-    print("digite 1 para ver o banco de dados ")
-    print("digite 2 para inserir dados no banco de dados ")
+    print(
+        '''
+                            SQLITE 3 COM PYTHON
+
+                        [1] para ver o banco de dados
+                        [2] para inserir dados no banco de dados 
+        '''
+    )
+
+    
     escolha = int(input(">"))
 
 
@@ -62,3 +70,4 @@ def menu():
 
 os.system("clear")
 menu()
+Footer
