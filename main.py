@@ -1,3 +1,12 @@
+'''
+Author: www.github.com/JuanBindez
+Description: Connection Sqlite3
+Python Version: 3.10
+year: 2022
+Local: Brazil
+'''
+
+
 import sqlite3
 import os
 
