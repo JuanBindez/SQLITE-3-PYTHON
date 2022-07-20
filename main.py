@@ -46,7 +46,7 @@ try:
         idade = str(input("idade>"))
         email = input("email>")
 
-        cursor.execute("INSERT INTO cadastro VALUES(NULL,'"+nome+"',"+idade+",'"+email+"')")
+        cursor.execute("INSERT INTO cadastro VALUES(NULL,'"+nome+"','"+idade+"','"+email+"')")
 
         banco_db.commit()#este comando salva os dados no banco de dados
         os.system("clear")
